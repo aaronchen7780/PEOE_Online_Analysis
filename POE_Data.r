@@ -161,7 +161,7 @@ TopicChangeDisplay
 ```
 **Note1:** Labels are participant IDs, numbers represent percentage gain/loss \
 **Note2:** CD = Cognitive Dissonance, CO = Conformity, OB = Obedience, SF = Social Facilitation. \
-**Note3:** The average of the percentage changes don't equal to overall percentage improvement because some conditions have 5 questions while others have 6. 
+**Note3:** The average of the percentage changes do not equal to overall percentage improvement because some conditions have 5 questions while others have 6. 
 
 
 # Pre and Post Scores for Each Topic
@@ -277,7 +277,7 @@ for (i in 1:length(condList)){
 CondDf
 ```
 
-Now we can match each participant's score change to the their respective conditions. 
+Now we can match the participant score change to the their respective conditions. 
 ```{r}
 CondChange = TopicChange
 names(CondChange)[1] = "Condition/ID"
@@ -316,7 +316,7 @@ for (rowNum in 1:dim(CondDf)[1]){
 CondChange
 ```
 
-Now Let's look at the average change over conditions: 
+Now we look at the average change over conditions: 
 ```{r}
 CondChangeMeans = rowMeans(CondChange[,-1])
 names(CondChangeMeans) = c("PEOE", "Raw", "Text", "None")
@@ -377,7 +377,6 @@ Here are the means of time spent across conditions:
 ```{r}
 c(mean(CondTimeDf$Raw), mean(CondTimeDf$Text), mean(CondTimeDf$PEOE))
 ```
-**Note:** I'm not too sure in what unit the original numbers are in, but I assumed they are in milliseconds. This is the data where I converted the numbers to minutes using that assumption. 
 
 # Pre and Post Scores for Each Condition
 ```{r}
@@ -427,7 +426,7 @@ rownames(PrePostCondScore) = c("Pretest", "Posttest")
 PrePostCondScore
 ```
 # Correlation Check
-Note here we're looking for the correlation between the average pre-test scores for every participant and their posttest scores within each condition. 
+Note here we are looking for the correlation between the average pre-test scores for every participant and their posttest scores within each condition. 
 ```{r}
 Get_Cond_Scores = function(df){
   PEOE = c()
