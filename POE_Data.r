@@ -391,7 +391,7 @@ get_PPCScores = function(df){
   None = c()
   for (i in 1:nrow(df)){
     for (j in 1:ncol(df)){
-      privID = as.numeric(substr(names(df)[1],2, nchar(names(df)[1])))
+      privID = as.numeric(substr(names(df)[j],2, nchar(names(df)[j])))
       topic = rownames(df)[i]
       if (topic == "OB"){
         None = c(None, df[i,j])
@@ -435,7 +435,7 @@ Get_Cond_Scores = function(df){
   None = c()
   for (i in 1:nrow(df)){
     for (j in 1:ncol(df)){
-      privID = as.numeric(substr(names(df)[1],2, nchar(names(df)[1])))
+      privID = as.numeric(substr(names(df)[j],2, nchar(names(df)[j])))
       topic = rownames(df)[i]
       if (topic == "OB"){
         None = c(None, df[i,j])
